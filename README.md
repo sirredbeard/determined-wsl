@@ -1,5 +1,7 @@
 ## A WSL distro image with Determined AI pre-installed and configured.
 
+![image](https://user-images.githubusercontent.com/33820650/236323027-503e6191-d52f-48a1-bb1b-6f43c77624a7.png)
+
 This is an initial, very rough, proof of concept. It is not officially supported.
 
 ### Files
