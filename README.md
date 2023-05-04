@@ -2,11 +2,15 @@
 
 ![image](https://user-images.githubusercontent.com/33820650/236323027-503e6191-d52f-48a1-bb1b-6f43c77624a7.png)
 
-This is an initial, very rough, proof of concept. It is not officially supported.
+[Determined](https://github.com/determined-ai/determined) is an open-source deep learning training platform that makes building models fast and easy.
+
+This is an initial, very rough, proof of concept of Determined pre-installed and configured running on a WSL image. 
+
+It is *not officially supported*. However, it does work, and supports CUDA devices, **see Known Issues below**.
 
 ### To Install
 
-Install WSL2:
+Install WSL 2:
 
 `wsl.exe --install`
 
@@ -30,15 +34,15 @@ determined-wsl will automatically appear in the drop-down box of [Windows Termin
 
 ### Files
 
-build.sh - Builds a minimal Ubuntu 22.04 base image with the dependencies needed for Determined AI. Requires Ubuntu 22.04 or later.
+*build.sh* - Builds a minimal Ubuntu 22.04 base image with the dependencies needed for Determined AI. Requires Ubuntu 22.04 or later.
 
-config.sh - Is run inside the base image at build time to install Docker and Determined.
+*config.sh* - Is run inside the base image at build time to install Docker and Determined.
 
-config-db.sh - Is run inside the base image at build time as the postgres user to configure PostgreSQL, because `sudo` and `runuser` break in chroots and I didn't want to set up systemd-nspawn for this yet.
+*config-db.sh* - Is run inside the base image at build time as the postgres user to configure PostgreSQL, because `sudo` and `runuser` break in chroots and I didn't want to set up systemd-nspawn for this yet.
 
-run.sh - Is run on start of determined-wsl to check PostgreSQL, Docker, Determined services are running, then launches the Determined AI web interface in the default Windows browser. **Note**: The default password for the Determined web UI is admin and no password.
+*run.sh* - Is run on start of determined-wsl to check PostgreSQL, Docker, Determined services are running, then launches the Determined AI web interface in the default Windows browser. **Note**: The default credentials for the Determined web UI is admin and no password.
 
-install.ps1 - Checks for WSL updates, imports determined-wsl into WSL2, and then runs determined-wsl. **Note**: If WSL is updated then the script will exit and need to be re-run.
+*install.ps1* - Checks for WSL updates, imports determined-wsl into WSL 2, and then runs determined-wsl. **Note**: If WSL is updated then the script will exit and need to be re-run.
 
 ### Known Issues
 
@@ -64,8 +68,8 @@ And launch determined-agent manually on each launch:
 
 ### Possible To Do's
 
-Improve the run.sh script to do more sanity checks and give a nice HUD experence
-Build a nice GUI around this, e.g. Docker Desktop
-Wrap the image in an Win32 installer with Determined icon and WIndows Terminal theme
-Automate fresh image builds using GitHub Actions
-An Arm build
+* Improve the run.sh script to do more sanity checks and give a nice HUD experence
+* Build a nice GUI around this, e.g. Docker Desktop
+* Wrap the image in an Win32 installer with Determined icon and WIndows Terminal theme
+* Automate fresh image builds using GitHub Actions
+* An Arm build
