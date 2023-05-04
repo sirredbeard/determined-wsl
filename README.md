@@ -4,9 +4,9 @@
 
 [Determined](https://github.com/determined-ai/determined) is an open-source deep learning training platform that makes building models fast and easy.
 
-This is an initial, very rough, proof of concept of Determined pre-installed and configured running on a WSL image. 
+This is an initial, rough, proof of concept of Determined pre-installed and configured running on a WSL image. 
 
-It is **not officially supported**. However, it does work, and supports CUDA devices, *see Known Issues below*.
+It is **not officially supported**. However, it does work, and supports NVIDIA CUDA devices.
 
 ### To Install
 
@@ -43,28 +43,6 @@ determined-wsl will automatically appear in the drop-down box of [Windows Termin
 *run.sh* - Is run on start of determined-wsl to check PostgreSQL, Docker, Determined services are running, then launches the Determined AI web interface in the default Windows browser. **Note**: The default credentials for the Determined web UI is admin and no password.
 
 *install.ps1* - Checks for WSL updates, imports determined-wsl into WSL 2, and then runs determined-wsl. **Note**: If WSL is updated then the script will exit and need to be re-run.
-
-### Known Issues
-
-**CUDA devices do not show up when determined-agent is started by systemd.** This could be an issue with determined-agent, NVIDIA Container Runtime, or systemd on WSL, more investigation is required.
-
-If you have a CUDA enabled NVIDIA GPU and CUDA slots are not appearing in Determined, stop the determined-agent service as managed by systemd:
-
-`systemctl stop determined-agent`
-
-And run determined-agent manually:
-
-`determined-agent run`
-
-If you recieve the message `agent is past reconnect period, it must restart`, simply re-run `determined-agent run`.
-
-You may want to disable the determined-agent systemd service:
-
-`systemctl disable determined-agent`
-
-And launch determined-agent manually on each launch:
-
-`echo 'determined-agent run' >> /etc/profile`
 
 ### Possible To Do's
 

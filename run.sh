@@ -1,7 +1,7 @@
 #!/bin/bash
 clear
 echo "Determined AI WSL"
-echo "Waiting for systemd to start Docker, PostgreSQL, and Determined"
+echo "Waiting for systemd to start Docker, PostgreSQL, and Determined..."
 sleep 5
 systemctl is-active --quiet docker
 if [[ $? -ne 0 ]] ; then
@@ -26,7 +26,7 @@ else
 fi
 systemctl is-active --quiet determined-agent 
 if [[ $? -ne 0 ]] ; then
-    echo "Error: determined-agent is not running, start it manually with: determined-agent run"
+    echo "Error: determined-agent is not running"
 else
     echo "determined-agent is running"
 fi

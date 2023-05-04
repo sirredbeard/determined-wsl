@@ -15,4 +15,5 @@ sed -i 's/# password: database_password/password: '"$postgrespw"'/g' /etc/determ
 sed -i 's/# host: determined-db/host: localhost/g' /etc/determined/master.yaml
 sed -i 's/# master_host: 0.0.0.0/master_host: localhost/g' /etc/determined/agent.yaml
 sed -i 's/# master_port: 80/master_port: 8080/g' /etc/determined/agent.yaml
+sed -i '10i \Environment=PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/lib/wsl/lib/' /lib/systemd/system/determined-agent.service
 echo "bash /run.sh" >> /etc/profile
