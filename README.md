@@ -2,6 +2,30 @@
 
 This is an initial, very rough, proof of concept. It is not officially supported.
 
+### To Install
+
+Install WSL2:
+
+`wsl.exe --install`
+
+Download the latest [release](https://github.com/sirredbeard/determined-wsl/releases) of determined-wsl.
+
+Import the WSL image:
+
+`wsl.exe --import determined-wsl C:\determined-wsl install.tar.gz --version=2`
+
+If you prefer a GUI to manage your WSL distributions, I recommend [Raft WSL](https://www.whitewaterfoundry.com/raft-wsl).
+
+### To Run
+
+From PowerShell:
+
+`wsl.exe -d determined-wsl`
+
+From Windows Terminal:
+
+determined-wsl will automatically appear in the drop-down box of [Windows Terminal](https://www.microsoft.com/store/productId/9N0DX20HK701).
+
 ### Files
 
 build.sh - Builds a minimal Ubuntu 22.04 base image with the dependencies needed for Determined AI. Requires Ubuntu 22.04 or later.
@@ -36,7 +60,7 @@ And launch determined-agent manually on each launch:
 
 `echo 'determined-agent run' >> /etc/profile`
 
-### Possible To Dos
+### Possible To Do's
 
 Improve the run.sh script to do more sanity checks and give a nice HUD experence
 Build a nice GUI around this, e.g. Docker Desktop
