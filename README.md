@@ -1,6 +1,6 @@
 ## A WSL distro image with Determined AI pre-installed and configured.
 
-![image](https://user-images.githubusercontent.com/33820650/236323027-503e6191-d52f-48a1-bb1b-6f43c77624a7.png)
+![Screenshot 2023-05-04 163007 - Copy](https://user-images.githubusercontent.com/33820650/236331092-559dcd0b-16f3-4e0c-b602-deba0f07e0f2.png)
 
 [Determined](https://github.com/determined-ai/determined) is an open-source deep learning training platform that makes building models fast and easy.
 
