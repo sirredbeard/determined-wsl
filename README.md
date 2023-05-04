@@ -6,7 +6,7 @@
 
 This is an initial, very rough, proof of concept of Determined pre-installed and configured running on a WSL image. 
 
-It is *not officially supported*. However, it does work, and supports CUDA devices, **see Known Issues below**.
+It is **not officially supported**. However, it does work, and supports CUDA devices, *see Known Issues below*.
 
 ### To Install
 
@@ -56,7 +56,7 @@ And run determined-agent manually:
 
 `determined-agent run`
 
-If you recieve the message "agent is past reconnect period, it must restart", simply re-run `determined-agent run`.
+If you recieve the message `agent is past reconnect period, it must restart`, simply re-run `determined-agent run`.
 
 You may want to disable the determined-agent systemd service:
 
