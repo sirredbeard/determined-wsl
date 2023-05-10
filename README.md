@@ -49,5 +49,6 @@ determined-wsl will automatically appear in the drop-down box of [Windows Termin
 * Improve the run.sh script to do more sanity checks and give a nice HUD experence
 * Build a nice GUI around this, e.g. Docker Desktop
 * Wrap the image in an Win32 installer with Determined icon and WIndows Terminal theme
+* Scoop and Winget packages
 * Automate fresh image builds using GitHub Actions
-* An Arm build
+* Push the build to the Microsoft Store
