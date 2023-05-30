@@ -1,6 +1,6 @@
 #!/bin/bash
 set -x
-builddir="/tmp/determined-wsl"
+builddir="localbuilddir"
 currentdir=$(pwd)
 sudo apt-get -y -q update
 sudo apt-get -y -q install debootstrap ca-certificates
@@ -20,4 +20,5 @@ sudo rm $builddir/.postgrespw
 cd $builddir
 sudo tar --ignore-failed-read -czf /tmp/install.tar.gz *
 sudo mv /tmp/install.tar.gz $currentdir
+sudo apt-get clean
 cd $currentdir
