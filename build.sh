@@ -5,7 +5,7 @@ currentdir=$(pwd)
 sudo apt-get -y -q update
 sudo apt-get -y -q install debootstrap ca-certificates
 sudo cp /usr/share/keyrings/ubuntu-master-keyring.gpg /etc/apt/trusted.gpg.d/
-sudo debootstrap --arch amd64 --variant=minbase --include=sudo,curl,systemd,postgresql,locales,ca-certificates,apt-utils,wget jammy $builddir http://archive.ubuntu.com/ubuntu/
+sudo debootstrap --arch aarch64 --variant=minbase --include=sudo,curl,systemd,postgresql,locales,ca-certificates,apt-utils,wget jammy $builddir http://archive.ubuntu.com/ubuntu/
 sudo cp config.sh $builddir
 sudo cp config-db.sh $builddir
 sudo cp run.sh $builddir
