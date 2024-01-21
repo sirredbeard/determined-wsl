@@ -1,7 +1,8 @@
+# Deprecation Notice
+
+This project is deprecated. [Follow the official Determined docs](https://docs.determined.ai/latest/setup-cluster/on-prem/options/wsl.html) to run WSL on your favorite Linux distro on WSL.
+
 ## A WSL distro image with Determined AI pre-installed and configured.
-
-
-
 
 ![Screenshot 2023-05-04 163007 - Copy](https://user-images.githubusercontent.com/33820650/236331092-559dcd0b-16f3-4e0c-b602-deba0f07e0f2.png)
 
